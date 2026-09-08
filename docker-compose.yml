@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: imokay
+      POSTGRES_PASSWORD: imokay
+      POSTGRES_DB: imokay
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: ./apps/api
+    ports:
+      - "3002:3002"
+    environment:
+      PORT: "3002"
+      DATABASE_URL: postgres://imokay:imokay@postgres:5432/imokay
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
