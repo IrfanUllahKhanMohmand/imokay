@@ -29,6 +29,19 @@ flutter pub get
 flutter run
 ```
 
+## API
+
+```
+GET  /health
+POST /users
+PUT  /users/:id/window
+GET  /users/:id/window
+POST /users/:id/contacts
+GET  /users/:id/contacts
+POST /users/:id/check-ins
+GET  /users/:id/check-ins
+```
+
 ## Repo
 
 ```
